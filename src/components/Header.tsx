@@ -4,6 +4,7 @@ const navLinks = [
   { href: "#how-i-help", label: "How I help" },
   { href: "#work", label: "Work" },
   { href: "#about", label: "About" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export default function Header() {
