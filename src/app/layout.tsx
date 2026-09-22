@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   title: "Donn Lester Regalado — Headless WordPress + Next.js Developer",
   description:
     "Senior Full Stack Developer specializing in headless WordPress + Next.js. I take WordPress past its theme-and-plugin ceiling with fast, modern React frontends — without disrupting your editors' workflow.",
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL("https://donn.us.ci"),
   openGraph: {
     title: "Donn Lester Regalado — Headless WordPress + Next.js Developer",
     description:
