@@ -1,0 +1,14 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Donn Lester Regalado logo">
+  <circle cx="60" cy="60" r="58" fill="#f5f1e7"/>
+  <circle cx="60" cy="60" r="58" fill="none" stroke="#b8471f" stroke-width="1.5"/>
+  <circle cx="60" cy="60" r="51" fill="none" stroke="#b8471f" stroke-width="1"/>
+
+  <!-- code bracket motif: headless backend <-> decoupled frontend -->
+  <path d="M22 48 L13 60 L22 72" fill="none" stroke="#4a5b45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M98 48 L107 60 L98 72" fill="none" stroke="#4a5b45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- monogram: DR -->
+  <text x="60" y="75" text-anchor="middle"
+        font-family="Fraunces, Georgia, 'Times New Roman', serif"
+        font-size="38" font-weight="600" fill="#1b1710" letter-spacing="-0.5">DR</text>
+</svg>
