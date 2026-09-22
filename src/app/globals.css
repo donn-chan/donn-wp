@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f5f1e7;
+  --paper-raised: #fbf8f1;
+  --ink: #1b1710;
+  --ink-soft: #6f6656;
+  --ink-faint: #a89d87;
+  --line: #ded3bd;
+  --rust: #b8471f;
+  --rust-soft: #e8d7c8;
+  --moss: #4a5b45;
+  --grain-opacity: 0.05;
+}
+
+[data-theme="dark"] {
+  --paper: #17140f;
+  --paper-raised: #1e1a13;
+  --ink: #f2ecdf;
+  --ink-soft: #b3a891;
+  --ink-faint: #6f6656;
+  --line: #332c20;
+  --rust: #e07a4a;
+  --rust-soft: #3a2a1e;
+  --moss: #93a888;
+  --grain-opacity: 0.08;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-raised: var(--paper-raised);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-rust: var(--rust);
+  --color-rust-soft: var(--rust-soft);
+  --color-moss: var(--moss);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  border-color: var(--line);
+}
+
+html {
+  color-scheme: light;
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  background-color: var(--paper);
+  color: var(--ink);
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: var(--grain-opacity);
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+[data-theme="dark"] body::before {
+  mix-blend-mode: overlay;
+}
+
+::selection {
+  background-color: var(--rust);
+  color: var(--paper);
+}
+
+.font-display {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+}
+
+.font-mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise {
+  animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    animation: none;
+  }
+}
