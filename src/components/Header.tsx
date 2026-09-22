@@ -1,9 +1,9 @@
 "use client";
 
 const navLinks = [
-  { href: "#how-i-help", label: "How I help" },
-  { href: "#work", label: "Work" },
-  { href: "#about", label: "About" },
+  { href: "/#how-i-help", label: "How I help" },
+  { href: "/#work", label: "Work" },
+  { href: "/#about", label: "About" },
   { href: "/blog", label: "Blog" },
 ];
 
@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-line/70 bg-paper/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-10">
-        <a href="#top" className="flex items-baseline gap-2">
+        <a href="/#top" className="flex items-baseline gap-2">
           <span className="font-display text-lg tracking-tight">Donn Regalado</span>
           <span className="hidden font-mono text-[11px] uppercase tracking-[0.18em] text-ink-faint sm:inline">
             headless wp + next.js
@@ -70,7 +70,7 @@ export default function Header() {
             </svg>
           </button>
           <a
-            href="#contact"
+            href="/#contact"
             className="hidden rounded-full bg-ink px-4 py-2 font-mono text-[12px] uppercase tracking-[0.1em] text-paper transition-colors hover:bg-rust sm:inline-block"
           >
             Start a project
