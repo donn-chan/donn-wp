@@ -20,7 +20,11 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-line/70 bg-paper/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-10">
-        <a href="/#top" className="flex items-center gap-2.5">
+        <a
+          href="/#top"
+          aria-label="Donn Regalado, home"
+          className="flex items-center gap-2.5"
+        >
           <img src="/logo.svg" alt="" width="32" height="32" className="size-8" />
           <span className="flex items-baseline gap-2">
             <span className="font-display text-lg tracking-tight">Donn Regalado</span>

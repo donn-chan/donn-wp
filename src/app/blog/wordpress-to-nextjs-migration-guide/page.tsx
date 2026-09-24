@@ -1,20 +1,45 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
+import { AUTHOR_NAME, SITE_NAME, SITE_URL } from "@/lib/site";
 import { posts } from "../posts";
 
 const post = posts.find(
   (p) => p.slug === "wordpress-to-nextjs-migration-guide"
 )!;
 
+const url = `/blog/${post.slug}`;
+
 export const metadata: Metadata = {
-  title: `${post.title} — Donn Lester Regalado`,
+  title: post.title,
   description: post.description,
+  alternates: { canonical: url },
   openGraph: {
     title: post.title,
     description: post.description,
+    url,
+    siteName: SITE_NAME,
     type: "article",
+    publishedTime: post.date,
+    authors: [AUTHOR_NAME],
+    images: "/opengraph-image",
   },
+};
+
+const postJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: post.title,
+  description: post.description,
+  datePublished: post.date,
+  dateModified: post.date,
+  url: `${SITE_URL}${url}`,
+  mainEntityOfPage: `${SITE_URL}${url}`,
+  image: `${SITE_URL}/opengraph-image`,
+  author: { "@id": `${SITE_URL}/#person` },
+  publisher: { "@id": `${SITE_URL}/#person` },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
 function H2({ children, id }: { children: React.ReactNode; id?: string }) {
@@ -63,6 +88,7 @@ function InlineCode({ children }: { children: React.ReactNode }) {
 export default function Post() {
   return (
     <>
+      <JsonLd data={postJsonLd} />
       <Header />
       <main className="flex-1">
         <article className="border-b border-line">

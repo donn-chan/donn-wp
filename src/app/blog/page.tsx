@@ -1,12 +1,20 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SITE_NAME } from "@/lib/site";
 import { posts } from "./posts";
 
 export const metadata: Metadata = {
-  title: "Blog — Donn Lester Regalado",
+  title: "Headless WordPress & Next.js Blog",
   description:
     "Notes on headless WordPress, Next.js, and taking WordPress past its theme-and-plugin ceiling.",
+  alternates: { canonical: "/blog" },
+  openGraph: {
+    url: "/blog",
+    siteName: SITE_NAME,
+    type: "website",
+    images: "/opengraph-image",
+  },
 };
 
 export default function BlogIndex() {
